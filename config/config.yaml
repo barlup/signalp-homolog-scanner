@@ -1,0 +1,31 @@
+download_dir: "results/downloaded_genomes"
+annotation_dir: "results/annotations"
+signalp_dir: "results/signalp"
+homology_dir: "results/homology"
+final_report: "results/differential_signalp_report.tsv"
+
+tools:
+  # Paths to executables (if not in PATH) or specific settings
+  prokka: "/path/to/prokka/bin/prokka" # Or just 'prokka' if in PATH
+  bakta: "bakta"
+  rasttk: "/path/to/rasttk/somewhere" # RASTtk might involve multiple scripts/paths
+  signalp: "/path/to/signalp-6.0/bin/signalp" # Example for SignalP 6
+  orthofinder: "orthofinder"
+  ncbi_datasets: "datasets" # NCBI datasets CLI tool
+
+parameters:
+  # Parameters for tools
+  prokka:
+    cpus: 8
+    kingdom: "Bacteria"
+  signalp:
+    organism: "gram-" # or 'gram+', 'euk', 'arch'
+    format: "short"
+  orthofinder:
+    threads: 8
+    # Add other relevant parameters
+
+annotation_tools:
+  - prokka
+  - bakta
+  # - rast # Enable/disable tools here
