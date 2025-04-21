@@ -1,0 +1,24 @@
+name: signalp-homolog
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Core
+  - python=3.9 # Or newer
+  - pip
+  # Python libraries
+  - biopython
+  - pandas # Useful for handling tabular data/reports
+  - pyyaml # For reading config.yaml
+  - requests # Potentially for API interactions
+  # Bioinformatics tools (check bioconda for availability)
+  - ncbi-datasets-cli # For downloading data
+  - prokka
+  - bakta
+  # - rasttk # RASTtk installation via conda can be complex, might need manual steps
+  - orthofinder
+  # SignalP often requires manual download and license agreement.
+  # List other dependencies here...
+  # - pip:
+  #   - signalp-python # If a wrapper exists, otherwise handle manually
